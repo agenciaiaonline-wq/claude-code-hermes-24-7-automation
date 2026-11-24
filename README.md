@@ -193,6 +193,6 @@ This blueprint combines production field-engineering with best practices from:
   <p>
     <a href="https://github.com/agenciaiaonline-wq">GitHub Portfolio</a> ·
     <a href="https://www.linkedin.com/in/agency-golden-nodalix-880598438/">LinkedIn</a> ·
-    <a href="https://github.com/agenciaiaonline-wq/high-ticket-ai-automation-catalog">Service Catalog</a>
+    <a href="https://github.com/agenciaiaonline-wq/agenciaiaonline-wq/blob/main/BLUEPRINTS.md">Service Catalog</a>
   </p>
 </div>
