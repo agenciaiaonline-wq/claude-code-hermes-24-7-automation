@@ -1,0 +1,19 @@
+[Unit]
+Description=OmniRoute Multi-Provider AI Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/.omniroute
+EnvironmentFile=/home/ubuntu/.omniroute/.env
+Environment=PORT=20128
+Environment=HOST=127.0.0.1
+ExecStart=/usr/bin/omniroute
+Restart=always
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
