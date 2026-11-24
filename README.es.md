@@ -124,6 +124,6 @@ docker compose -f docker/docker-compose.example.yml --env-file .env up -d
   <p>
     <a href="https://github.com/agenciaiaonline-wq">Portafolio GitHub</a> ·
     <a href="https://www.linkedin.com/in/agency-golden-nodalix-880598438/">LinkedIn</a> ·
-    <a href="https://github.com/agenciaiaonline-wq/high-ticket-ai-automation-catalog">Catálogo de Servicios</a>
+    <a href="https://github.com/agenciaiaonline-wq/agenciaiaonline-wq/blob/main/BLUEPRINTS.es.md">Catálogo de Servicios</a>
   </p>
 </div>
