@@ -1,0 +1,20 @@
+# Caddyfile.example — Automatic HTTPS Reverse Proxy
+# Replace example domains with your own DNS-pointed subdomains.
+
+omniroute.your-domain.example.com {
+    reverse_proxy 127.0.0.1:20128 {
+        flush_interval -1
+    }
+}
+
+n8n.your-domain.example.com {
+    reverse_proxy 127.0.0.1:5678 {
+        flush_interval -1
+    }
+}
+
+hermes.your-domain.example.com {
+    reverse_proxy 127.0.0.1:8080 {
+        flush_interval -1
+    }
+}

@@ -1,0 +1,87 @@
+# ~/.hermes/config.yaml (Sanitized Production Example)
+# Keep API keys & tokens strictly inside ~/.hermes/.env
+
+model:
+  default: claude-sonnet-4-6
+  provider: openai-compatible
+  base_url: http://127.0.0.1:20128/v1
+
+fallback_providers:
+  - provider: openai-compatible
+    model: gemini-3.8-flash-high
+  - provider: openai-compatible
+    model: auto-omni-resilient
+
+database:
+  journal_mode: wal
+
+runtime:
+  nofile_soft_limit: 4096
+
+agent:
+  max_turns: 250
+  verbose: false
+  reasoning_effort: medium
+
+terminal:
+  backend: local
+  cwd: .
+  timeout: 600
+
+browser:
+  inactivity_timeout: 120
+  use_real_profile: true
+
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: true
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+
+compression:
+  enabled: true
+  checkpoint_required: false
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+
+display:
+  compact: false
+  busy_input_mode: queue
+  streaming: true
+  interim_assistant_messages: true
+
+gateway:
+  signal_interrupt_grace_timeout: 10
+  delivery_ledger: true
+  platform_connect_timeout: 30
+  loop_watchdog: true
+  loop_watchdog_probe_interval_s: 30.0
+
+cron:
+  script_timeout_seconds: 1800
+  cleanup_timeout_seconds: 10
+  media_send_timeout_seconds: 600
+
+mcp_servers:
+  playwright-cdp:
+    command: npx
+    args:
+      - "-y"
+      - "@playwright/mcp@latest"
+      - "--cdp-endpoint"
+      - "http://127.0.0.1:9224"
+    enabled: true
+
+  github:
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-github"
+    enabled: false # Enable after configuring GITHUB_PERSONAL_ACCESS_TOKEN in ~/.hermes/.env
